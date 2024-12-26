@@ -32,6 +32,11 @@ ion-card-title, ion-card-subtitle {
   font-weight: bold;
 }
 
+ion-card-content {
+  padding: 10px;
+  text-align: center; /* Alinea el contenido dentro de las tarjetas */
+}
+
 ion-grid {
   ion-row {
     ion-col {

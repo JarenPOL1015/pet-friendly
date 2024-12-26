@@ -1,35 +1,40 @@
 ion-tab-bar {
-    background: #00A550; /* Fondo verde */
-    color: #FFFFFF; /* Texto blanco por defecto */
-    border-top: 2px solid #FFA500; /* Línea superior naranja */
-  
-    ion-tab-button {
-      background: #FFFFFF; /* Fondo blanco de los botones */
-      color: #00A550; /* Texto e íconos en verde */
-      border-radius: 20px; /* Hace los botones redondeados */
-      padding: 5px 10px; /* Espaciado interno */
-      margin: 0 5px; /* Espaciado entre botones */
-      transition: transform 0.3s, background 0.3s, color 0.3s;
-  
-      &.tab-selected {
-        background: #FFA500; /* Naranja para el botón seleccionado */
-        color: #FFFFFF; /* Texto blanco */
-        transform: scale(1.1); /* Efecto de agrandado al seleccionarlo */
-      }
-  
-      ion-icon {
-        font-size: 20px;
-      }
-  
-      ion-label {
-        font-size: 12px;
-        font-weight: bold;
-      }
-  
-      &:hover {
-        background: #FFD700; /* Amarillo claro al pasar el cursor */
-        color: #FFFFFF; /* Texto blanco */
-      }
+  background: #00A550; /* Fondo verde */
+  color: #FFFFFF; /* Texto blanco */
+  border-top: 2px solid #FFA500; /* Línea superior naranja */
+  display: flex; /* Habilita flexbox */
+  flex-wrap: nowrap; /* Impide que los botones pasen a una nueva línea */
+  overflow-x: auto; /* Permite el desplazamiento horizontal si es necesario */
+  justify-content: space-evenly; /* Distribuye los botones de manera uniforme */
+
+  ion-tab-button {
+    flex: 1 1 auto; /* Ajusta el ancho de los botones de manera proporcional */
+    max-width: 120px; /* Limita el ancho máximo */
+    background: #FFFFFF; /* Fondo blanco */
+    color: #00A550; /* Texto verde */
+    border-radius: 20px; /* Bordes redondeados */
+    padding: 5px 10px; /* Espaciado interno */
+    margin: 5px; /* Espaciado externo */
+    transition: transform 0.3s, background 0.3s, color 0.3s;
+
+    &.tab-selected {
+      background: #FFA500; /* Fondo naranja para el seleccionado */
+      color: #FFFFFF; /* Texto blanco */
+      transform: scale(1.1); /* Efecto de agrandado */
+    }
+
+    ion-icon {
+      font-size: 18px; /* Tamaño ajustado */
+    }
+
+    ion-label {
+      font-size: 12px; /* Texto más pequeño */
+      font-weight: bold;
+    }
+
+    &:hover {
+      background: #FFD700; /* Amarillo claro al pasar el cursor */
+      color: #FFFFFF; /* Texto blanco */
     }
   }
-  
+}
