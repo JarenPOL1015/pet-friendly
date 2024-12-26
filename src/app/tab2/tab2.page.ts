@@ -36,7 +36,7 @@ export class Tab2Page {
 
   creadores = [
     { imagen: 'assets/jaren.jpg', nombre: 'Jaren Pazmiño' },
-    { imagen: 'assets/jaren.jpg', nombre: 'Ariel Vargas' },
+    { imagen: 'assets/ariel.jpg', nombre: 'Ariel Vargas' },
     { imagen: 'assets/jaren.jpg', nombre: 'Brian Mite' },
   ];
 
