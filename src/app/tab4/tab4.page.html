@@ -44,21 +44,26 @@
     }
   </div>
 
-  <h3>Quieres formar parte de los lugares de acogida?</h3>
-  <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-
-    <ion-select formControlName="cantidad" label="Cantidad" placeholder="Seleccione cuantos animales puede albergar">
-      <ion-select-option value="1">1</ion-select-option>
-      <ion-select-option value="2">2</ion-select-option>
-      <ion-select-option value="3+">3 o más</ion-select-option>
-    </ion-select>
-
-    <ion-select formControlName="ciudad" label="Ciudad" placeholder="Seleccione la ciudad donde se encuentra">
-      
-    </ion-select>
-    
-    <ion-textarea formControlName="detalles" label="Detalles" placeholder="Coloque aquí más detalles sobre su postulación"></ion-textarea>
-
-    <ion-button type="submit" [disabled]="!myForm.valid">Enviar</ion-button>
-  </form>
+  <div class="form-container">
+    <h3>¿Quieres formar parte de los lugares de acogida?</h3>
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+      <ion-select formControlName="cantidad" label="Cantidad" placeholder="Seleccione cuántos animales puede albergar">
+        <ion-select-option value="1">1</ion-select-option>
+        <ion-select-option value="2">2</ion-select-option>
+        <ion-select-option value="3+">3 o más</ion-select-option>
+      </ion-select>
+  
+      <ion-select formControlName="ciudad" label="Ciudad" placeholder="Seleccione la ciudad donde se encuentra">
+        @for (ciudad of cities; track $index) {
+          <ion-select-option [value]="ciudad">{{ ciudad }}</ion-select-option>
+        }
+      </ion-select>
+  
+      <ion-textarea formControlName="detalles" label="Detalles" placeholder="Coloque aquí más detalles sobre su postulación"></ion-textarea>
+  
+      <ion-button type="submit" [disabled]="!myForm.valid">Enviar</ion-button>
+    </form>
+  </div>
+  
+  
 </ion-content>
