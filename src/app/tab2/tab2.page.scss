@@ -1,0 +1,85 @@
+ion-content {
+    --background: #F8F9FA;
+    color: #343A40;
+  }
+    
+  ion-card {
+    background: #FFFFFF; /* Fondo naranja */
+    color: #343A40; /* Texto blanco */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra más ligera */
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-bottom: 20px; /* Más espacio entre tarjetas */
+  
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+  
+    img {
+      display: block;
+      max-width: 100%; /* Mantiene el ancho dentro de los límites del contenedor */
+      max-height: 300px; /* Limita la altura máxima */
+      margin: 10px auto; /* Centra la imagen horizontalmente */
+      object-fit: contain; /* Ajusta el contenido sin recortarlo */
+      border-radius: 10px; /* Bordes redondeados */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+    }
+  }
+    
+  ion-card-title, ion-card-subtitle {
+    color: #343A40; /* Títulos más oscuros */
+    font-weight: bold;
+  }
+  
+  ion-card-content {
+    padding: 10px;
+    text-align: center; /* Alinea el contenido dentro de las tarjetas */
+  }
+  
+  ion-grid {
+    ion-row {
+      ion-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-top: 10px;
+  
+        img {
+          margin-bottom: 8px;
+          border-radius: 50%;
+          width: 90px;
+          height: 90px;
+          border: 2px solid #00A550; /* Borde verde */
+          transition: transform 0.3s, box-shadow 0.3s;
+  
+          &:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          }
+        }
+  
+        p {
+          margin: 0;
+          color: #343A40; /* Texto negro */
+          font-weight: normal;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  
+  ion-toolbar {
+    --background: #00A550; /* Barra de navegación verde */
+    color: #FFFFFF; /* Texto blanco */
+  }
+  
+  ion-title {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+    
+  ion-card-header {
+      text-align: center;
+  }

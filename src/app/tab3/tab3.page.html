@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Fundaciones
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Fundaciones</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  @for (datum of dataList; track $index) {
+    <ion-item>
+      <ion-label>{{ datum?.name }}</ion-label>
+      <ion-label>{{ datum?.img }}</ion-label>
+      <ion-label>{{ datum?.social }}</ion-label>
+      <ion-label>{{ datum?.contact }}</ion-label>
+    </ion-item>
+  }
+
+</ion-content>
