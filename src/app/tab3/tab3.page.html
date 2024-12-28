@@ -13,13 +13,19 @@
     </ion-toolbar>
   </ion-header>
 
-  @for (datum of dataList; track $index) {
-    <ion-item>
-      <ion-label>{{ datum?.name }}</ion-label>
-      <ion-label>{{ datum?.img }}</ion-label>
-      <ion-label>{{ datum?.social }}</ion-label>
-      <ion-label>{{ datum?.contact }}</ion-label>
-    </ion-item>
-  }
-
+  <div class="foundation-container">
+    @for (datum of dataList; track $index) {
+      <div class="foundation-card">
+        <h2>Fundación</h2>
+        <h3>"{{ datum?.name }}"</h3>
+        <img src="{{ datum?.img }}" alt="Logo de {{ datum?.name }}" />
+        <p>
+          <strong>Contactos de la fundación:</strong><br />
+          Número de contacto: {{ datum?.contact }}<br />
+          Redes sociales: {{ datum?.social }}
+        </p>
+        <a href="#" class="more-link">Ver más</a>
+      </div>
+    }
+  </div>
 </ion-content>
