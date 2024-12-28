@@ -13,4 +13,13 @@
     </ion-toolbar>
   </ion-header>
 
+  @for (datum of dataList; track $index) {
+    <ion-item>
+      <ion-label>{{ datum?.name }}</ion-label>
+      <ion-label>{{ datum?.img }}</ion-label>
+      <ion-label>{{ datum?.social }}</ion-label>
+      <ion-label>{{ datum?.contact }}</ion-label>
+    </ion-item>
+  }
+
 </ion-content>

@@ -8,7 +8,7 @@ import { IonHeader, IonToolbar, IonTitle, IonContent,
   IonGrid,
   IonRow,
   IonCol,
-  IonCardSubtitle
+  //IonCardSubtitle
  } from '@ionic/angular/standalone';
 
 @Component({
@@ -24,7 +24,7 @@ import { IonHeader, IonToolbar, IonTitle, IonContent,
     IonGrid,
     IonRow,
     IonCol,
-    IonCardSubtitle
+    //IonCardSubtitle
   ],
 })
 export class Tab1Page {
