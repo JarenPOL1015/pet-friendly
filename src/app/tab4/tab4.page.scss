@@ -1,8 +1,125 @@
 ion-toolbar {
-    --background: #00A550; /* Barra de navegación verde */
-    color: #FFFFFF; /* Texto blanco */
+  --background: #00A550; /* Barra de navegación verde */
+  color: #FFFFFF; /* Texto blanco */
+}
+
+ion-title {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+ion-content {
+  --background: #F8F9FA;
+  color: #343A40;
+}
+
+.search-section {
+  text-align: center;
+  margin: 20px 10px;
+
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #343A40;
   }
-  
-  ion-title {
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+
+  .search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #fef6d8;
+    border-radius: 20px;
+    padding: 10px 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    input {
+      border: none;
+      outline: none;
+      background: transparent;
+      font-size: 14px;
+      color: #666;
+      width: 100%;
+    }
+
+    ion-icon {
+      color: #666;
+      font-size: 18px;
+    }
   }
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+}
+
+ion-input {
+  width: 90%;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 8px 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.location-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.location-card {
+  width: 300px;
+  margin: 20px 10px;
+  padding: 15px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  h2 {
+    font-size: 18px;
+    color: #00a550;
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 16px;
+    color: #343a40;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 14px;
+    color: #343a40;
+  }
+
+  a.more-link {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    color: #ffffff;
+    background: #00a550;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+
+    &:hover {
+      background: #007b3a;
+    }
+  }
+}

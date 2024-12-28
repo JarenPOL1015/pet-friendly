@@ -13,8 +13,23 @@
     </ion-toolbar>
   </ion-header>
 
+  <!-- Título y buscador -->
+  <div class="search-section">
+    <h1>FUNDACIONES</h1>
+    <div class="search-container">
+      <input
+        type="text"
+        [(ngModel)]="searchTerm"
+        placeholder="No encuentras la fundación que buscas?"
+        (input)="filterData()"
+      />
+      <ion-icon name="search-outline"></ion-icon>
+    </div>
+  </div>
+
+  <!-- Lista de fundaciones -->
   <div class="foundation-container">
-    @for (datum of dataList; track $index) {
+    @for (datum of filteredData; track $index) {
       <div class="foundation-card">
         <h2>Fundación</h2>
         <h3>"{{ datum?.name }}"</h3>
@@ -22,9 +37,9 @@
         <p>
           <strong>Contactos de la fundación:</strong><br />
           Número de contacto: {{ datum?.contact }}<br />
-          Redes sociales: {{ datum?.social }}
+          Redes sociales: &#64;{{ datum?.social }}
         </p>
-        <a href="#" class="more-link">Ver más</a>
+        <a [href]="'https://www.instagram.com/' + (datum?.social || '')" class="more-link" target="_blank">Ver más</a>        
       </div>
     }
   </div>

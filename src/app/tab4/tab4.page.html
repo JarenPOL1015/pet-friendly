@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Lugares de acogida
+      Lugares de Acogida
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,4 +13,34 @@
     </ion-toolbar>
   </ion-header>
 
+  <!-- Título y buscador -->
+  <div class="search-section">
+    <h1>Lugares/Casa de Acogida para Animales Callejeros</h1>
+    <div class="search-container">
+      <input
+        type="text"
+        [(ngModel)]="searchTerm"
+        placeholder="¿No encuentras el lugar que buscas?"
+        (input)="filterData()"
+      />
+      <ion-icon name="search-outline"></ion-icon>
+    </div>
+  </div>
+
+  <!-- Lista de lugares de acogida -->
+  <div class="location-container">
+    @for (datum of filteredData; track $index) {
+      <div class="location-card">
+        <h2>Lugar de Acogida</h2>
+        <h3>"{{ datum?.name }}"</h3>
+        <img src="{{ datum?.img }}" alt="Imagen de {{ datum?.name }}" />
+        <p>
+          <strong>Ciudad:</strong> {{ datum?.city }}
+        </p>
+        <a [href]="datum?.link" target="_blank" rel="noopener noreferrer" class="more-link">
+          Visitar Sitio Web
+        </a>
+      </div>
+    }
+  </div>
 </ion-content>
