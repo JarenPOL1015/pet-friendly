@@ -10,10 +10,7 @@ ion-content {
 
 .text-center {
   text-align: center;
-}
-
-@media (max-width: 768px) {
-  
+  padding: 20px;
 }
 
 ion-grid, ion-card {
