@@ -1,11 +1,15 @@
 import { Component, signal, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonFab, IonFabButton, IonIcon, IonCard,
+import { IonCardContent, IonButton, IonList, IonItem, IonLabel,
+  IonFab, IonFabButton, IonIcon, IonCard,
   IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 
 import { addIcons } from 'ionicons';
 import { cloudUploadOutline } from 'ionicons/icons';
+
+/* Importe el servicio */
+import { TeachablemachineService } from '../services/teachablemachine.service';
 
 
 @Component({
@@ -13,16 +17,28 @@ import { cloudUploadOutline } from 'ionicons/icons';
   templateUrl: './tab5.page.html',
   styleUrls: ['./tab5.page.scss'],
   standalone: true,
-  imports: [IonFab, IonFabButton, IonIcon, IonCard,
+  imports: [IonCardContent, IonButton, IonList, IonItem, IonLabel,
+    IonFab, IonFabButton, IonIcon, IonCard,
     IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
 })
-export class Tab5Page implements OnInit {
+export class Tab5Page {
 
   imageReady = signal(false)
   imageUrl = signal("")
 
-  constructor() { 
+  /* Declare los atributos para almacenar el modelo y la lista de clases */
+  modelLoaded = signal(false);
+  classLabels: string[] = [];
+
+  constructor(private teachablemachine: TeachablemachineService) { 
     addIcons({ cloudUploadOutline });
+  }
+
+  /* Método ngOnInit para cargar el modelo y las clases */
+  async ngOnInit() {
+    await this.teachablemachine.loadModel()
+    this.classLabels = this.teachablemachine.getClassLabels()
+    this.modelLoaded.set(true)
   }
 
   onFileSelected(event: Event): void {
@@ -40,9 +56,6 @@ export class Tab5Page implements OnInit {
 
       reader.readAsDataURL(file); // Leer el archivo como base64
     }
-}
-
-  ngOnInit() {
   }
 
 }

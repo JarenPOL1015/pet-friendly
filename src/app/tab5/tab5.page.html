@@ -18,7 +18,19 @@
       <img [src]="imageUrl()" alt="Imagen seleccionada" />
      
       <!-- CARGA DE PREDICCIÓN - INICIO -->
+      @if(modelLoaded()) {
+
+        <div class="ion-text-center ion-padding-top ion-padding-bottom">
+          <ion-button fill="outline" color="success">Predecir</ion-button>
+        </div>
      
+        <ion-list>
+          <ion-item>
+            <ion-label>Clases:  {{ classLabels  }} </ion-label>
+          </ion-item>
+        </ion-list>
+     
+      }
       <!-- CARGA DE PREDICCIÓN - FIN -->
 
     </ion-card>
