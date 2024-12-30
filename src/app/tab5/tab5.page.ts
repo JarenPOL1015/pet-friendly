@@ -1,4 +1,4 @@
-import { Component, signal, OnInit } from '@angular/core';
+import { ViewChild, ElementRef, Component, signal} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonCardContent, IonButton, IonList, IonItem, IonLabel,
@@ -11,17 +11,26 @@ import { cloudUploadOutline } from 'ionicons/icons';
 /* Importe el servicio */
 import { TeachablemachineService } from '../services/teachablemachine.service';
 
+/* Importe el pipe */
+import { PercentPipe } from '@angular/common';
+
 
 @Component({
   selector: 'app-tab5',
   templateUrl: './tab5.page.html',
   styleUrls: ['./tab5.page.scss'],
   standalone: true,
-  imports: [IonCardContent, IonButton, IonList, IonItem, IonLabel,
+  imports: [
+    /* Registre el pipe */
+    PercentPipe,
+    IonCardContent, IonButton, IonList, IonItem, IonLabel,
     IonFab, IonFabButton, IonIcon, IonCard,
     IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
 })
 export class Tab5Page {
+
+  /* Declare la referencia al elemento con el id image */
+  @ViewChild('image', { static: false }) imageElement!: ElementRef<HTMLImageElement>;
 
   imageReady = signal(false)
   imageUrl = signal("")
@@ -57,5 +66,19 @@ export class Tab5Page {
       reader.readAsDataURL(file); // Leer el archivo como base64
     }
   }
+
+  /* Lista de predicciones */
+  predictions: any[] = [];
+
+  /* Método para obtener la predicción a partir de la imagen */
+  async predict() {
+    try {
+        const image = this.imageElement.nativeElement;
+        this.predictions = await this.teachablemachine.predict(image);
+    } catch (error) {
+        console.error(error);
+        alert('Error al realizar la predicción.');
+    }
+}
 
 }
