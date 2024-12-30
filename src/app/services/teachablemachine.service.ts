@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class TeachablemachineService {
 
-  private URL = "https://teachablemachine.withgoogle.com/models/<ID-MODELO>/"
+  private URL = "https://teachablemachine.withgoogle.com/models/1u0xw1iRY/"
   private model: any;
   private classLabels: string[] = [];
 
